@@ -13,11 +13,12 @@ Things you need to do:
 
 * bundle install
 
-* rake db:create 
+* rake db:setup
 
-* rake db:migrate 
+* rails server
 
-* rake db:seed 
+* http://localhost:3000
+
 
 For Production Mode run:
 
