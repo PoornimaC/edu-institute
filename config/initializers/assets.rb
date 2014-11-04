@@ -1,0 +1,1 @@
+EducationalInstituation::Application.config.assets.precompile += ['application.js', 'application.css']

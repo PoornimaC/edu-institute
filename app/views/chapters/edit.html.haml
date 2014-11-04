@@ -1,0 +1,7 @@
+- breadcrumb :chapter_edit, @chapter, :link_last => true
+- model_class = Chapter
+.page-header
+  %h4=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= simple_form_for @chapter, url: course_syllabus_chapter_path(@course, @syllabus, @chapter), html: { class: "form form-horizontal syllabus" } do |f|
+  = render "form", {:f => f}
+

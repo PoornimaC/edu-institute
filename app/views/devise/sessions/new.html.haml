@@ -1,0 +1,18 @@
+.page-header
+  %h3=t 'Sign in'
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form form-horizontal syllabus" }) do |f|
+  .form-group
+    = f.label :email, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :email, class: 'form-control', autofocus: true, required: false
+  .form-group
+    = f.label :password, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.password_field :password, class: 'form-control', required: false
+  .form-group
+    = f.input :remember_me, as: :boolean 
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.button :submit, "Sign in", class: 'btn btn-primary'
+= render "devise/shared/links"
+

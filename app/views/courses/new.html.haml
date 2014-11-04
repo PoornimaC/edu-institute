@@ -1,0 +1,5 @@
+- breadcrumb :course_new, "New" , :link_last => true       
+- model_class = Course
+.page-header
+  %h4=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

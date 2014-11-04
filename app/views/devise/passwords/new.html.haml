@@ -1,0 +1,12 @@
+.page-header
+  %h3=t 'Forgot your password?'
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form form-horizontal" }) do |f|
+  .form-group
+    = f.label :email, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :email, class: 'form-control', required: true, autofocus: true
+    = f.error_span(:email)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.button :submit, "Send me reset password instructions", class: 'btn btn-primary'
+= render "devise/shared/links"

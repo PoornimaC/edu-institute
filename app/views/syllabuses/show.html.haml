@@ -1,0 +1,25 @@
+- breadcrumb :syllabus, @syllabus , :link_last => true   
+- model_class = Syllabus
+.page-header
+  %h4=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  = @syllabus.name
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  = @syllabus.description
+%p
+  %strong= model_class.human_attribute_name(:status) + ':'
+  = EduInsConstants::STATUS_MAPPING.get_by_key_from_2d_array(@syllabus.status)
+%br
+
+
+= link_to t('.back', :default => t("helpers.links.back")),  course_syllabuses_url(@course), :class => 'btn btn-default'
+- if current_user.has_role? :professor
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_course_syllabus_path(@course, @syllabus), :class => 'btn btn-default'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), course_syllabus_path(@course, @syllabus), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+
+- content_for :sidebar, render('sidebar')
+
+
