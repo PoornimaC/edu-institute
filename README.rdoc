@@ -5,11 +5,17 @@ application up and running.
 
 * Rails version => 4.1.1
 
-Things you may want to cover:
+Things you need to do:
 
 * rake db:create 
 
 * rake db:migrate 
 
 * rake db:seed 
+
+For Production Mode run:
+
+RAILS_ENV=production rake assets:clobber
+RAILS_ENV=production rake assets:precompile
+
 
